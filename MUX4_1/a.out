@@ -1,0 +1,84 @@
+#! /usr/share/iverilog-0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_6)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x10935c0 .scope module, "mux41_test" "mux41_test" 2 5;
+ .timescale -9 -12;
+v0x10a56e0_0 .var "i0", 0 0;
+v0x10a5780_0 .var "i1", 0 0;
+v0x10a5830_0 .var "i2", 0 0;
+v0x10a58e0_0 .var "i3", 0 0;
+v0x10a59c0_0 .var/i "k", 31 0;
+I0x1094f80 .island tran;
+p0x7f4abe51e0d8 .port I0x1094f80, C4<z>;
+v0x10a5a40_0 .net "out", 0 0, p0x7f4abe51e0d8; 0 drivers
+v0x10a5ac0_0 .var "s0", 0 0;
+v0x10a5b70_0 .var "s1", 0 0;
+S_0x10936b0 .scope module, "MYMUX41" "mux_4to1" 2 8, 3 2, S_0x10935c0;
+ .timescale -9 -12;
+p0x7f4abe51e018 .port I0x1094f80, v0x10a56e0_0;
+v0x1070a90_0 .net "i0", 0 0, p0x7f4abe51e018; 1 drivers
+p0x7f4abe51e048 .port I0x1094f80, v0x10a5780_0;
+v0x10a4fa0_0 .net "i1", 0 0, p0x7f4abe51e048; 1 drivers
+p0x7f4abe51e078 .port I0x1094f80, v0x10a5830_0;
+v0x10a5040_0 .net "i2", 0 0, p0x7f4abe51e078; 1 drivers
+p0x7f4abe51e0a8 .port I0x1094f80, v0x10a58e0_0;
+v0x10a50e0_0 .net "i3", 0 0, p0x7f4abe51e0a8; 1 drivers
+v0x10a5190_0 .alias "out", 0 0, v0x10a5a40_0;
+p0x7f4abe51e108 .port I0x1094f80, v0x10a5ac0_0;
+v0x10a5230_0 .net "s0", 0 0, p0x7f4abe51e108; 1 drivers
+p0x7f4abe51e138 .port I0x1094f80, v0x10a5b70_0;
+v0x10a5310_0 .net "s1", 0 0, p0x7f4abe51e138; 1 drivers
+p0x7f4abe51e168 .port I0x1094f80, C4<z>;
+v0x10a53b0_0 .net "t0", 0 0, p0x7f4abe51e168; 0 drivers
+p0x7f4abe51e198 .port I0x1094f80, C4<z>;
+v0x10a54a0_0 .net "t1", 0 0, p0x7f4abe51e198; 0 drivers
+p0x7f4abe51e1c8 .port I0x1094f80, C4<z>;
+v0x10a5540_0 .net "t2", 0 0, p0x7f4abe51e1c8; 0 drivers
+p0x7f4abe51e1f8 .port I0x1094f80, C4<z>;
+v0x10a5640_0 .net "t3", 0 0, p0x7f4abe51e1f8; 0 drivers
+ .tranif0 I0x1094f80, p0x7f4abe51e018 p0x7f4abe51e168, p0x7f4abe51e108;
+ .tranif0 I0x1094f80, p0x7f4abe51e168 p0x7f4abe51e0d8, p0x7f4abe51e138;
+ .tranif1 I0x1094f80, p0x7f4abe51e048 p0x7f4abe51e198, p0x7f4abe51e108;
+ .tranif0 I0x1094f80, p0x7f4abe51e198 p0x7f4abe51e0d8, p0x7f4abe51e138;
+ .tranif0 I0x1094f80, p0x7f4abe51e078 p0x7f4abe51e1c8, p0x7f4abe51e108;
+ .tranif1 I0x1094f80, p0x7f4abe51e1c8 p0x7f4abe51e0d8, p0x7f4abe51e138;
+ .tranif1 I0x1094f80, p0x7f4abe51e0a8 p0x7f4abe51e1f8, p0x7f4abe51e108;
+ .tranif1 I0x1094f80, p0x7f4abe51e1f8 p0x7f4abe51e0d8, p0x7f4abe51e138;
+    .scope S_0x10935c0;
+T_0 ;
+    %set/v v0x10a59c0_0, 0, 32;
+T_0.0 ;
+    %load/v 8, v0x10a59c0_0, 32;
+   %cmpi/s 8, 64, 32;
+    %jmp/0xz T_0.1, 5;
+    %delay 5000, 0;
+    %load/v 8, v0x10a59c0_0, 32;
+    %set/v v0x10a58e0_0, 8, 1;
+    %set/v v0x10a5830_0, 9, 1;
+    %set/v v0x10a5780_0, 10, 1;
+    %set/v v0x10a56e0_0, 11, 1;
+    %set/v v0x10a5b70_0, 12, 1;
+    %set/v v0x10a5ac0_0, 13, 1;
+    %load/v 8, v0x10a5b70_0, 1;
+    %load/v 9, v0x10a5ac0_0, 1;
+    %load/v 10, v0x10a58e0_0, 1;
+    %load/v 11, v0x10a5830_0, 1;
+    %load/v 12, v0x10a5780_0, 1;
+    %load/v 13, v0x10a56e0_0, 1;
+    %vpi_call 2 12 "$display", "Sel: %2b, In: %4b, Out: %b", T<8,2,u>, T<10,4,u>, v0x10a5a40_0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x10a59c0_0, 32;
+    %set/v v0x10a59c0_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";
